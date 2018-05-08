@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
-<head>
+<html lang="en"><head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.9.0/jquery.min.js"></script>
-	<title>跳转到chrome打开</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>AR演示</title>
 	<link href="http://caibaojian.com/demo/reset.css" rel="stylesheet" type="text/css">
 	<style type="text/css">
 	/*演示用，请勿引入项目中*/
@@ -20,39 +18,29 @@
 		.wxtip-icon{width: 52px; height: 67px; background: url(http://img.caibaojian.com/uploads/2016/01/weixin-tip.png) no-repeat; display: block; position: absolute; right: 30px; top: 20px;}
 		.wxtip-txt{padding-top: 107px; color: #fff; font-size: 16px; line-height: 1.5;}
 	</style>
-	<script src="https://zz.bdstatic.com/linksubmit/push.js" type="text/javascript" charset="utf-8"></script>
-</head>
-
+<script src="https://zz.bdstatic.com/linksubmit/push.js" type="text/javascript" charset="utf-8"></script></head>
 <body>
 <div class="example">
-	<p>这只是一个演示例子：只对微信下载做一个演示，在微信中，当你点击下面链接时会弹出一个提示层，提醒用户通过右上角打开浏览器下载应用文件</p>
-	<a id="JdownApp" href="http://caibaojian.com/demo/2016/3/weixin-downapp.html#">点击下载APP</a>
-	<a class="btn-warn" id="JdownApp2" href="http://caibaojian.com/demo/2016/3/weixin-downapp.html#">点击下载APP2</a>
 	<div class="wxtip" id="JweixinTip">
 		<span class="wxtip-icon"></span>
-		<p class="wxtip-txt">点击右上角<br>选择在浏览器中打开</p>
+		<p class="wxtip-txt">安卓用户请点击右上角<br>选择在chrome浏览器中打开</p>
 	</div>
 </div>
 <script type="text/javascript">
-function weixinTip(ele){
+function weixinTip(){
 var ua = navigator.userAgent;
 var isWeixin = !!/MicroMessenger/i.test(ua);
 if(isWeixin){
-	ele.onclick=function(e){
-		window.event? window.event.returnValue = false : e.preventDefault();
-		document.getElementById('JweixinTip').style.display='block';
-	}
+	window.event? window.event.returnValue = false : e.preventDefault();
+	document.getElementById('JweixinTip').style.display='block';
+	
 	document.getElementById('JweixinTip').onclick=function(){
 		this.style.display='none';
 	}
 }
 }
-var btn1 = document.getElementById('JdownApp');//下载一
-weixinTip(btn1);
-var btn2 = document.getElementById('JdownApp2'); //下载二
-weixinTip(btn2);
+
 </script>
 <script src="http://caibaojian.com/demo/base.js" type="text/javascript"></script><div style="display:none;"><script language="JavaScript" src="http://s95.cnzz.com/stat.php?id=1259911407&amp;web_id=1259911407"></script><script src="http://c.cnzz.com/core.php?web_id=1259911407&amp;t=z" type="text/javascript" charset="utf-8"></script><a title="站长统计" href="http://www.cnzz.com/stat/website.php?web_id=1259911407" target="_blank">站长统计</a></div><div style="display:none;"><script src=" http://hm.baidu.com/h.js?76f7925b251388d7e1685af322d9b447" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=76f7925b251388d7e1685af322d9b447" target="_blank"><img width="20" height="20" src="https://hmcdn.baidu.com/static/hmt/icon/21.gif" border="0"></a></div>
 
-</body>
-</html>
+</body></html>
